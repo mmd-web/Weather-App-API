@@ -1,0 +1,11 @@
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.w_mainBox {
+  width: 500px;
+}
+.h_mainBox {
+  height: 600px;
+}

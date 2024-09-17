@@ -1,14 +1,12 @@
 let $ = document;
 
 let getInputCityName = $.getElementById('cityValue');
-let getCTname = $.getElementById('CTname')
 let btnSearch = $.getElementById('btn_search');
 let getElemCityName = $.getElementById('cityName');
 let getElemDate = $.getElementById('date');
 let getElemDeg = $.getElementById('deg');
 let getElemWeather = $.getElementById('weather');
-let getElemLowWeather = $.getElementById('low_weather');
-let getElemHightWeather = $.getElementById('hight_weather');
+let getElemLowWeather = $.getElementById('low_hi');
 
 let saveValueInpCityName ;
 let apiKeyValue = '2b035ef3f205e674b7d38785063e4c6f';
@@ -28,7 +26,19 @@ btnSearch.addEventListener('click' , () => {
   
 })
 
+let saveValueConversion ;
+
 function setData (data) {
-  getElemCityName.innerHTML = data.name;
-  getCTname.innerHTML = data.sys.country;
+  getElemCityName.innerHTML = `${data.name} , ${data.sys.country}`;
+  
+  getElemDeg.innerHTML = `${conversion(data.main.temp)}°C`;
+  
+  getElemWeather.innerHTML = data.weather[0].main;
+  
+  getElemLowWeather.innerHTML = `Low: ${conversion(data.main.temp_min)}°C / Max: ${conversion(data.main.temp_max)}°C`
+}
+
+function conversion (deg) {
+  saveValueConversion = Math.floor(deg - 273.15);
+  return saveValueConversion;
 }

@@ -74,4 +74,8 @@ body {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+  .fs_date {
+    font-size: 0.93rem;
+    font-weight: bolder;
+  }
 }

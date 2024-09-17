@@ -11,12 +11,17 @@ let getElemLowWeather = $.getElementById('low_hi');
 let saveValueInpCityName ;
 let apiKeyValue = '2b035ef3f205e674b7d38785063e4c6f';
 
+let apiValue = {
+  url : 'https://api.openweathermap.org/data/2.5/weather?q=',
+  key : '2b035ef3f205e674b7d38785063e4c6f',
+}
+
 btnSearch.addEventListener('click' , () => {
   saveValueInpCityName = getInputCityName.value;
   
 
   if (saveValueInpCityName) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${saveValueInpCityName}&appid=2b035ef3f205e674b7d38785063e4c6f`)
+    fetch(`${apiValue.url}${saveValueInpCityName}&appid=${apiValue.key}`)
       .then(res => res.json())
       .then(data => {
         console.log(data);

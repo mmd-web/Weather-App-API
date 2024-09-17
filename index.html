@@ -9,8 +9,32 @@
 </head>
 <body>
 
-  <div class="position-absolute w-100 h-100 bg-dark d-flex justify-content-center align-items-center">
-    <div class="bg-danger w_mainBox h_mainBox" id="mainBox"></div>
+  <div class="position-absolute w-100 h-100 bg_main d-flex justify-content-center align-items-center">
+    <div class="w_mainBox h_mainBox bg_mainBox d-flex flex-column justify-content-center" id="mainBox">
+      <div class="w-100 d-flex justify-content-center align-items-center flex-row column-gap-3 py-4">
+        <input type="text" id="cityValue" placeholder="Enter the name of the city" class="w_input rounded-2 border-0 py-2 px-4">
+        <button class="btn btn-primary py-2 px-4 w_btn">
+          <span class="w-100 h-100">search</span>
+        </button>
+      </div>
+      <div class="w-100 d-flex justify-content-start align-items-center flex-column py-4">
+        <div class="">
+          <span id="cityName" class="fs_cityName text-light" style="text-shadow: 0 0 10px #e5244e;">City , <span>CT</span></span>
+        </div>
+        <div class="">
+          <span id="date" class="fs_date text-light" style="text-shadow: 0 0 10px #e5244e;">Date , Date , Date</span>
+        </div>
+        <div class="mt-4">
+          <span id="deg" class="fs_deg text-light" style="text-shadow: 0 0 10px #e5244e;">Deg</span>
+        </div>
+        <div class="mt-3">
+          <span id="weather" class="fs_weather text-light" style="text-shadow: 0 0 10px #e5244e;">Weather</span>
+        </div>
+        <div class="mt-2">
+          <span id="low_weather" class="fs_low_weather text-light" style="text-shadow: 0 0 10px #e5244e;">low , <span>Hight</span></span>
+        </div>
+      </div>
+    </div>
   </div>
   
   <script src="./public/Js/bootstrap.bundle.min.js"></script>
